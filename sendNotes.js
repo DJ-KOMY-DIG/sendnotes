@@ -31,7 +31,7 @@ if (sendBtn) {
     //    const noteVal = noteField.value.trim();
        const noteVal = noteField.value;
 
-        console.log("送信データ確認:", JSON.stringify(noteVal));
+        alert("送信データの中身:\n" + JSON.stringify(noteVal));
 
         // 入力がない場合
         if (!noteVal) return;
