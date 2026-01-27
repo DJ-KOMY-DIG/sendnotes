@@ -68,7 +68,11 @@ h1 {
     font-weight: bold;
     color: #333;
     letter-spacing: 1px;
-    word-break: break-all; 
+    word-break: break-all;     
+    white-space: pre-wrap;  /* 改行やスペース、タブをそのまま表示 */     
+    tab-size: 4;            /* タブ文字が入っていた場合の幅（文字数）を指定 */   
+    word-break: break-all;  /* 長い単語は折り返す */    
+    font-family: monospace; /* 書体は等幅フォント（プログラミング用） */
 }
 
 @keyframes slideIn {

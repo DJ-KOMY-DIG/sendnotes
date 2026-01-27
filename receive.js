@@ -37,13 +37,15 @@ if (resultsDiv) {
         // 簡易的なXSS（クロスサイトスクリプティング）攻撃対策として textContent を使うのも可
         // const safeName = data.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        let safeNotes = data.notes;
+        // let safeNotes = data.notes;
+        
+        const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
         // 改行を <br> に変換
-        safeNotes = safeNotes.replace(/\n/g, '<br>');
+        // safeNotes = safeNotes.replace(/\n/g, '<br>');
 
         // タブ文字(\t) を スペース4つ(&nbsp;&nbsp;&nbsp;&nbsp;) に変換 
-        safeNotes = safeNotes.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+        // safeNotes = safeNotes.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
 
         card.innerHTML = `
             <div class="card-notes">${safeNotes}</div>

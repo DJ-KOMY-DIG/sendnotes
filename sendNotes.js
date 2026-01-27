@@ -26,6 +26,24 @@ const sendBtn = document.getElementById('sendBtn'); // 送信ボタン
 if (sendBtn) {
     const noteField = document.getElementById('inputNotes');   // メモ入力ボックス
 
+    // Tabキーでインデントを入力できるようにする
+    noteField.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+            e.preventDefault(); // フォーカス移動を無効化
+            
+            // カーソル位置にスペース2つ（またはタブ\t）を挿入
+            const start = noteField.selectionStart;
+            const end = noteField.selectionEnd;
+            const indent = "  "; // スペース2個とする場合
+            // const indent = "\t"; // 本当のタブ文字とする場合
+
+            noteField.value = noteField.value.substring(0, start) + indent + noteField.value.substring(end);
+            
+            // カーソル位置を調整
+            noteField.selectionStart = noteField.selectionEnd = start + indent.length;
+        }
+    });
+
     // 送信ボタンのクリックイベントハンドラ
     sendBtn.addEventListener('click', () => {
     //    const noteVal = noteField.value.trim();
