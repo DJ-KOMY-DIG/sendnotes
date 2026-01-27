@@ -57,27 +57,20 @@ button.danger-btn:hover {
 .input-group {
     margin-bottom: 15px;
     text-align: left;
-    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    /* ★親要素の幅を500pxにする（これが基準になる） */
+    width: 100%;       
+    max-width: 500px; 
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #555;
-}
-
-input[type="text"] {
-    font-size: 18px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box; 
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    outline: none;
+/* 入力エリア固有の設定 */
+textarea#inputNotes {
+    letter-spacing: 2px;
+    height: 500px;
+    /* width: 500px;  ← ★固定幅を削除（またはコメントアウト） */
+    width: 100%;   /* ← ★親要素に合わせて伸縮させる */
+    resize: both;
 }
 
 /* inputタグとtextareaタグ共通のデザイン */
@@ -91,15 +84,6 @@ textarea {
     border-radius: 6px;
     outline: none;
     font-family: inherit; /* フォントを親に合わせる */
-}
-
-/* コマンド入力エリア固有の設定 */
-textarea#inputNotes {
-    letter-spacing: 2px;    /* 文字間隔を広げる */
-    height: 500px;          /* 高さを指定 */
-    width: 500px;           /* 幅を指定 */
-    resize:both;            /* ユーザーがサイズ変更可能 */
-    /* line-height: 1.5;       行間を少し広げて可読性UP */
 }
 
 input:focus,
