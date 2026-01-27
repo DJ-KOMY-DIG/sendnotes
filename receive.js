@@ -36,7 +36,8 @@ if (resultsDiv) {
         // サニタイズ（不正な文字を安全な文字に置き換え）
         // 簡易的なXSS（クロスサイトスクリプティング）攻撃対策として textContent を使うのも可
         // const safeName = data.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const safeNotes = data.notes;
 
         card.innerHTML = `
             <div class="card-notes">${safeNotes}</div>
