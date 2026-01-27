@@ -39,7 +39,11 @@ if (resultsDiv) {
         // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         let safeNotes = data.notes;
 
+        // 改行を <br> に変換
         safeNotes = safeNotes.replace(/\n/g, '<br>');
+
+        // タブ文字(\t) を スペース4つ(&nbsp;&nbsp;&nbsp;&nbsp;) に変換 
+        safeNotes = safeNotes.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
 
         card.innerHTML = `
             <div class="card-notes">${safeNotes}</div>
