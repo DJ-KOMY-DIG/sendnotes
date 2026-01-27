@@ -39,7 +39,7 @@ if (resultsDiv) {
         // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         const safeNotes = data.notes;
 
-        // safeNotes = safeNotes.replace(/\n/g, '<br>');
+        safeNotes = safeNotes.replace(/\n/g, '<br>');
 
         card.innerHTML = `
             <div class="card-notes">${safeNotes}</div>
