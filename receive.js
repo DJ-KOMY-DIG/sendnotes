@@ -45,8 +45,11 @@ if (resultsDiv) {
             <div class="card-notes">${safeNotes}</div>
         `;
         // 画面に追加
-        resultsDiv.appendChild(card);
-        window.scrollTo(0, document.body.scrollHeight);
+        // resultsDiv.appendChild(card); // ← 末尾に追加（古い順になる）
+        resultsDiv.prepend(card);         // ← 先頭に追加（新しい順＝新しいものが上に来る）
+
+        // 新しいものが上に来るので、「一番下までスクロール」は不要
+        // window.scrollTo(0, document.body.scrollHeight);
     });
 
 }

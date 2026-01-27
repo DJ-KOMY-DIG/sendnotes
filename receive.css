@@ -25,13 +25,31 @@ h1 {
     color:blue;
 }
 
-#results { 
+/* #results { 
     display: flex; 
     flex-wrap: wrap; 
     gap: 15px; 
-    justify-content: center; 
+    justify-content: center; 縦方向の隙間設定
     align-items: flex-start;
     margin-top: 30px; 
+} */
+
+#results { 
+    display: flex; 
+    
+    /* 横並び(wrap)をやめて、縦並び(column)にする */
+    flex-direction: column; /* ← 追加：縦方向に並べる */
+    
+    gap: 15px; 
+    
+    /* 縦並びのときの「左右の揃え方」 */
+    /* カードの幅を画面いっぱいに広げる場合は、align-items: stretch; */
+    align-items: center; /* カードを中央揃えにする（左揃え：flex-start） */
+
+    margin-top: 30px; 
+    
+    /* スマホなどで見やすくするために下余白を追加 */
+    padding-bottom: 50px;
 }
 
 .card {
