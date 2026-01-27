@@ -28,8 +28,9 @@ if (sendBtn) {
 
     // 送信ボタンのクリックイベントハンドラ
     sendBtn.addEventListener('click', () => {
-       const noteVal = noteField.value.trim();
-       
+    //    const noteVal = noteField.value.trim();
+       const noteVal = noteField.value;
+
         // 入力がない場合
         if (!noteVal) return;
 
