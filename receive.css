@@ -51,6 +51,9 @@ h1 {
     color: #333;
     letter-spacing: 1px;
     word-break: break-all; 
+    white-space: pre-wrap;  /* 改行コードをそのまま改行として表示する */
+    text-align: left;       /* 複数行になるなら左揃えの方が見やすい */
+    line-height: 1.2;       /* 行間が開きすぎないように少し詰める */
 }
 
 @keyframes slideIn {
