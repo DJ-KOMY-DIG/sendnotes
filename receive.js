@@ -37,7 +37,7 @@ if (resultsDiv) {
         // 簡易的なXSS（クロスサイトスクリプティング）攻撃対策として textContent を使うのも可
         // const safeName = data.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        const safeNotes = data.notes;
+        let safeNotes = data.notes;
 
         safeNotes = safeNotes.replace(/\n/g, '<br>');
 
