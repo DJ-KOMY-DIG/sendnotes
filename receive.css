@@ -25,15 +25,6 @@ h1 {
     color:blue;
 }
 
-/* #results { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 15px; 
-    justify-content: center; 縦方向の隙間設定
-    align-items: flex-start;
-    margin-top: 30px; 
-} */
-
 #results { 
     display: flex; 
     

@@ -34,22 +34,19 @@ if (resultsDiv) {
 
         // 安全のためにHTMLエスケープ（HTMLタグが入力された場合の安全策）
         // サニタイズ（不正な文字を安全な文字に置き換え）
-        // 簡易的なXSS（クロスサイトスクリプティング）攻撃対策として textContent を使うのも可
-        // const safeName = data.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        // const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        // let safeNotes = data.notes;
-        
+        // 簡易的なXSS（クロスサイトスクリプティング）攻撃対策として textContent を使うのも可        
         const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
+        
+        // let safeNotes = data.notes;
         // 改行を <br> に変換
         // safeNotes = safeNotes.replace(/\n/g, '<br>');
-
         // タブ文字(\t) を スペース4つ(&nbsp;&nbsp;&nbsp;&nbsp;) に変換 
         // safeNotes = safeNotes.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
 
         card.innerHTML = `
             <div class="card-notes">${safeNotes}</div>
         `;
+        
         // 画面に追加
         // resultsDiv.appendChild(card); // ← 末尾に追加（古い順になる）
         resultsDiv.prepend(card);         // ← 先頭に追加（新しい順＝新しいものが上に来る）
