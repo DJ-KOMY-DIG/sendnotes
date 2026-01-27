@@ -39,7 +39,7 @@ if (resultsDiv) {
         const safeNotes = data.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
         card.innerHTML = `
-            <div class="card-cmd">${safeNotes}</div>
+            <div class="card-notes">${safeNotes}</div>
         `;
         // 画面に追加
         resultsDiv.appendChild(card);
