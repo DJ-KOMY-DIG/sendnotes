@@ -49,6 +49,7 @@ if (sendBtn) {
     //    const noteVal = noteField.value.trim();
        const noteVal = noteField.value;
 
+        // デバッグ
         // alert("送信データの中身:\n" + JSON.stringify(noteVal));
 
         // 入力がない場合

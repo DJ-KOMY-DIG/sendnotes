@@ -15,5 +15,5 @@ function showAlert(title, text, icon) {
   });
 }
 
-// windowオブジェクトに登録することで、モジュール内から呼べるようにする
+// windowオブジェクトに登録（モジュール内から呼べるようにする）
 window.showAlert = showAlert;
