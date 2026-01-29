@@ -48,6 +48,34 @@ if (resultsDiv) {
             <div class="card-notes">${safeNotes}</div>
         `;
         
+        // コピーボタンを作成
+        const copyBtn = document.createElement('button');
+        copyBtn.textContent = 'Copy'; // 最初は「Copy」やアイコンを表示
+        copyBtn.className = 'copy-btn';
+
+        // クリック時の動作を設定
+        copyBtn.addEventListener('click', () => {
+            // クリップボードにテキストを書き込む
+            navigator.clipboard.writeText(safeNotes)
+                .then(() => {
+                    // 成功時：ボタンの表示を変えてフィードバックを与える
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    
+                    // 2秒後に元の表示に戻す
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('コピーに失敗しました:', err);
+                    alert('コピーに失敗しました');
+                });
+        });
+
+        // カードにボタンを追加
+        card.appendChild(copyBtn);
+
         // 画面に追加
         // resultsDiv.appendChild(card); // ← 末尾に追加（古い順になる）
         resultsDiv.prepend(card);         // ← 先頭に追加（新しい順＝新しいものが上に来る）

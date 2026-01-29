@@ -44,6 +44,7 @@ h1 {
 }
 
 .card {
+    position: relative;     /* Copyボタンをcardの枠を基準に配置するために必要 */
     background: white;
     padding: 15px 20px;
     border-radius: 10px;
@@ -52,6 +53,26 @@ h1 {
     text-align: left;
     animation: slideIn 0.4s ease-out;
     border-left: 5px solid #007bff; 
+}
+
+/* コピーボタンのスタイル */
+.copy-btn {
+    position: absolute;
+    top: 5px;      /* 上からの位置 */
+    right: 5px;    /* 右からの位置 */
+    
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #555;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #e0e0e0;
 }
 
 .card-notes {
