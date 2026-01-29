@@ -44,22 +44,24 @@ h1 {
 }
 
 .card {
-    position: relative;     /* Copyボタンをcardの枠を基準に配置するために必要 */
+    position: relative; /* ボタンの配置基準 */
     background: white;
     padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    min-width: 120px; 
+    min-width: 120px;
     text-align: left;
     animation: slideIn 0.4s ease-out;
-    border-left: 5px solid #007bff; 
+    border-left: 5px solid #007bff;
+    margin-bottom: 10px; /* カード同士の間隔用 */
 }
 
 /* コピーボタンのスタイル */
 .copy-btn {
     position: absolute;
-    top: 5px;      /* 上からの位置 */
-    right: 5px;    /* 右からの位置 */
+    top: 5px;
+    right: 5px;
+    z-index: 10;    /* テキストより手前に表示させる */
     
     background-color: #f0f0f0;
     border: none;
@@ -80,11 +82,10 @@ h1 {
     font-weight: bold;
     color: #333;
     letter-spacing: 1px;
-    word-break: break-all;     
-    white-space: pre-wrap;      /* 改行やスペース、タブをそのまま表示 */     
-    tab-size: 4;                /* タブ文字が入っていた場合の幅（文字数）を指定 */   
-    word-break: break-all;      /* 長い単語は折り返す */    
-    font-family: monospace;     /* 書体は等幅フォント（プログラミング用） */
+    white-space: pre-wrap; /* 改行やスペースをそのまま表示 */
+    word-break: break-all;
+    font-family: monospace;
+    padding-right: 30px; /* ボタンと被らないように右側に余白を作る */
 }
 
 @keyframes slideIn {
