@@ -22,9 +22,18 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 // クリップボードのアイコン
+// const ICON_COPY = `
+// <svg viewBox="0 0 24 24">
+//   <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+// </svg>`;
+
 const ICON_COPY = `
 <svg viewBox="0 0 24 24">
-  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+  <path transform="translate(0, 5)" 
+        d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1z"
+        fill="#999" /* 少し色を薄くして遠近感を出す */ />
+        
+  <path d="M21 7h-11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
 </svg>`;
 
 // チェックマークのアイコン（完了用）
