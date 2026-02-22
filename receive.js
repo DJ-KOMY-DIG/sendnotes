@@ -51,7 +51,19 @@ if (resultsDiv) {
         // 自動的に安全に表示され、かつバッククォート等でのエラーも防げる
         const noteContent = document.createElement("div");
         noteContent.className = "card-notes";
-        noteContent.textContent = data.notes; // ここで生のデータを入れる（自動エスケープされる）
+
+        // URLをリンクにする正規表現
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        
+        // 置換処理
+        const linkedText = data.notes.replace(urlRegex, (url) => {
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline; font-weight: bold;">${url}</a>`;
+        });
+
+        // innerHTMLで代入
+        noteContent.innerHTML = linkedText;
+
+        // noteContent.textContent = data.notes; // ここで生のデータを入れる（自動エスケープされる）
         card.appendChild(noteContent);
 
         // コピーボタンの作成
@@ -96,9 +108,8 @@ if (resultsDiv) {
 function getKeyValue() {
     const aryData = [65, 73, 122, 97, 83, 121, 68, 82, 114, 72, 121, 118, 95, 66, 114, 115, 74, 105, 98, 95, 115, 99, 55, 117, 117, 71, 122, 65, 111, 70, 111, 115, 98, 121, 121, 49, 68, 84, 56]
     let key = "";
-    for (const code of aryData) {
-        key += String.fromCharCode(code);
+    for (const i of aryData) {
+        key += String.fromCharCode(i);
     }
     return key;
-
 }
